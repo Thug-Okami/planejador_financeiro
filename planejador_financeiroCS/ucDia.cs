@@ -17,7 +17,19 @@ namespace planejador_financeiroCS
         // null = célula vazia (preenchimento antes do dia 1)
         private readonly DateTime? _date;
 
+
+
         private void panel1_Click(object sender, EventArgs e)
+        {
+            if (_date == null) return;
+            using (var eventform = new EventoForm(_date.Value))
+            {
+                eventform.ShowDialog(this);
+            }
+            displayEvents();
+        }
+
+        private void flowLayoutPanel1_Click(object sender, EventArgs e)
         {
             if (_date == null) return;
             using (var eventform = new EventoForm(_date.Value))
@@ -51,8 +63,8 @@ namespace planejador_financeiroCS
 
         private void displayEvents()
         {
+            flowLayoutPanel1.Controls.Clear();
             lblDia.Text = string.Empty;
-            label2.Text = string.Empty;
             if (_date == null) return;
 
             var date = _date.Value;
@@ -64,15 +76,29 @@ namespace planejador_financeiroCS
                     .ToList();
                 if (lanc.Count == 0) return;
                 lblDia.Text += " (" + lanc.Count + ")";
-                // show first three names
-                var names = lanc.Select(l => l.Name).ToList();
-                label2.Text = string.Join(", ", names.Take(3));
-                if (names.Count > 3) label2.Text += ", ...";
+
+                // alimenta o flowLayoutPanel1 com os lançamentos do dia
+                foreach (var l in lanc)
+                {
+                    var lbl = new Label
+                    {
+                        Text = l.Name,
+                        Width = flowLayoutPanel1.Width - 4,
+                        Height = 16,
+                        Font = new Font("Segoe UI", 8, FontStyle.Bold),
+                        ForeColor = l.Tipo == "Receita" ? ColorTranslator.FromHtml("#81B381") : ColorTranslator.FromHtml("#B38181"),
+                        BackColor = l.Tipo == "Receita" ? ColorTranslator.FromHtml("#E3F4E3") : ColorTranslator.FromHtml("#F4E3E3"),
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Margin = new Padding(0, 1, 0, 0)
+                    };
+                    flowLayoutPanel1.Controls.Add(lbl);
+                }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
             }
         }
+
     }
 }

@@ -109,7 +109,9 @@ namespace planejador_financeiroCS.Services
             var oneTimes = _items.Where(x => !x.IsRecurringMonthly && x.Date.Month == month && x.Date.Year == year);
             results.AddRange(oneTimes);
 
-            var recurring = _items.Where(x => x.IsRecurringMonthly);
+            var requestedMonth = new DateTime(year, month, 1);
+            var recurring = _items.Where(x => x.IsRecurringMonthly &&
+                new DateTime(x.Date.Year, x.Date.Month, 1) <= requestedMonth);
             foreach (var r in recurring)
             {
                 var day = r.Date.Day;

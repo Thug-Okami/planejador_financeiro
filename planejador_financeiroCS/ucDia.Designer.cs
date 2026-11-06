@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label2 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             lblDia = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -37,31 +37,34 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Window;
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(flowLayoutPanel1);
             panel1.Controls.Add(lblDia);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(1);
-            panel1.Size = new Size(110, 70);
+            panel1.Size = new Size(110, 78);
             panel1.TabIndex = 0;
             panel1.Click += panel1_Click;
             // 
-            // label2
+            // flowLayoutPanel1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(4, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 1;
-            label2.Text = "label2";
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(4, 19);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(102, 61);
+            flowLayoutPanel1.TabIndex = 2;
+            flowLayoutPanel1.WrapContents = false;
+            flowLayoutPanel1.Click += flowLayoutPanel1_Click;
             // 
             // lblDia
             // 
             lblDia.AutoSize = true;
+            lblDia.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDia.Location = new Point(4, 1);
             lblDia.Name = "lblDia";
-            lblDia.Size = new Size(19, 15);
+            lblDia.Size = new Size(21, 15);
             lblDia.TabIndex = 0;
             lblDia.Text = "00";
             // 
@@ -73,7 +76,7 @@
             Controls.Add(panel1);
             Margin = new Padding(0);
             Name = "ucDia";
-            Size = new Size(110, 70);
+            Size = new Size(110, 78);
             Load += ucDia_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -84,6 +87,6 @@
 
         private Panel panel1;
         private Label lblDia;
-        private Label label2;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

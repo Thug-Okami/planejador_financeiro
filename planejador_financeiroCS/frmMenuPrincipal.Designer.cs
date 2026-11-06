@@ -34,6 +34,15 @@
             btnBack = new Button();
             btnNext = new Button();
             panel1 = new Panel();
+            lblNumSaldo = new Label();
+            lblNumSaldoPrevisto = new Label();
+            lblSaldoPrevisto = new Label();
+            lblSaldo = new Label();
+            lblResumoMes = new Label();
+            lblDespesa = new Label();
+            lblRenda = new Label();
+            lblNumDespesa = new Label();
+            lblNumRenda = new Label();
             btnCrud = new Button();
             panel3 = new Panel();
             panel4 = new Panel();
@@ -48,13 +57,6 @@
             label6 = new Label();
             panel9 = new Panel();
             label7 = new Label();
-            label1 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -76,10 +78,10 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(12, 98);
+            flowLayoutPanel1.Location = new Point(12, 75);
             flowLayoutPanel1.Margin = new Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(776, 424);
+            flowLayoutPanel1.Size = new Size(776, 477);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // lblMes
@@ -114,18 +116,104 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label13);
-            panel1.Controls.Add(label12);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label1);
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(lblNumSaldo);
+            panel1.Controls.Add(lblNumSaldoPrevisto);
+            panel1.Controls.Add(lblSaldoPrevisto);
+            panel1.Controls.Add(lblSaldo);
+            panel1.Controls.Add(lblResumoMes);
+            panel1.Controls.Add(lblDespesa);
+            panel1.Controls.Add(lblRenda);
+            panel1.Controls.Add(lblNumDespesa);
+            panel1.Controls.Add(lblNumRenda);
             panel1.Controls.Add(btnCrud);
-            panel1.Location = new Point(791, 5);
+            panel1.Location = new Point(782, -1);
+            panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(207, 544);
+            panel1.Size = new Size(216, 570);
             panel1.TabIndex = 12;
+            // 
+            // lblNumSaldo
+            // 
+            lblNumSaldo.AutoSize = true;
+            lblNumSaldo.Location = new Point(74, 249);
+            lblNumSaldo.Name = "lblNumSaldo";
+            lblNumSaldo.Size = new Size(63, 15);
+            lblNumSaldo.TabIndex = 21;
+            lblNumSaldo.Text = "SaldoNum";
+            // 
+            // lblNumSaldoPrevisto
+            // 
+            lblNumSaldoPrevisto.AutoSize = true;
+            lblNumSaldoPrevisto.Location = new Point(74, 335);
+            lblNumSaldoPrevisto.Name = "lblNumSaldoPrevisto";
+            lblNumSaldoPrevisto.Size = new Size(63, 15);
+            lblNumSaldoPrevisto.TabIndex = 22;
+            lblNumSaldoPrevisto.Text = "Saldo previsto";
+            // 
+            // lblSaldoPrevisto
+            // 
+            lblSaldoPrevisto.AutoSize = true;
+            lblSaldoPrevisto.Location = new Point(27, 291);
+            lblSaldoPrevisto.Name = "lblSaldoPrevisto";
+            lblSaldoPrevisto.Size = new Size(86, 15);
+            lblSaldoPrevisto.TabIndex = 23;
+            lblSaldoPrevisto.Text = "Saldo previsto";
+            // 
+            // lblSaldo
+            // 
+            lblSaldo.AutoSize = true;
+            lblSaldo.Location = new Point(27, 191);
+            lblSaldo.Name = "lblSaldo";
+            lblSaldo.Size = new Size(36, 15);
+            lblSaldo.TabIndex = 20;
+            lblSaldo.Text = "Saldo";
+            // 
+            // lblResumoMes
+            // 
+            lblResumoMes.AutoSize = true;
+            lblResumoMes.Location = new Point(23, 14);
+            lblResumoMes.Name = "lblResumoMes";
+            lblResumoMes.Size = new Size(92, 15);
+            lblResumoMes.TabIndex = 19;
+            lblResumoMes.Text = "Resumo do mês";
+            // 
+            // lblDespesa
+            // 
+            lblDespesa.AutoSize = true;
+            lblDespesa.Location = new Point(23, 106);
+            lblDespesa.Name = "lblDespesa";
+            lblDespesa.Size = new Size(50, 15);
+            lblDespesa.TabIndex = 18;
+            lblDespesa.Text = "Despesa";
+            // 
+            // lblRenda
+            // 
+            lblRenda.AutoSize = true;
+            lblRenda.Location = new Point(23, 44);
+            lblRenda.Name = "lblRenda";
+            lblRenda.Size = new Size(40, 15);
+            lblRenda.TabIndex = 17;
+            lblRenda.Text = "Renda";
+            // 
+            // lblNumDespesa
+            // 
+            lblNumDespesa.AutoSize = true;
+            lblNumDespesa.Location = new Point(57, 140);
+            lblNumDespesa.Name = "lblNumDespesa";
+            lblNumDespesa.Size = new Size(92, 15);
+            lblNumDespesa.TabIndex = 16;
+            lblNumDespesa.Text = "Depesas do mês";
+            // 
+            // lblNumRenda
+            // 
+            lblNumRenda.AutoSize = true;
+            lblNumRenda.Location = new Point(55, 75);
+            lblNumRenda.Name = "lblNumRenda";
+            lblNumRenda.Size = new Size(82, 15);
+            lblNumRenda.TabIndex = 15;
+            lblNumRenda.Text = "Renda do mês";
             // 
             // btnCrud
             // 
@@ -142,7 +230,7 @@
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(lblSegunda);
-            panel3.Location = new Point(12, 64);
+            panel3.Location = new Point(12, 41);
             panel3.Margin = new Padding(0);
             panel3.Name = "panel3";
             panel3.Size = new Size(110, 34);
@@ -153,7 +241,7 @@
             panel4.BackColor = Color.WhiteSmoke;
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(label2);
-            panel4.Location = new Point(122, 64);
+            panel4.Location = new Point(122, 41);
             panel4.Margin = new Padding(0);
             panel4.Name = "panel4";
             panel4.Size = new Size(110, 34);
@@ -173,7 +261,7 @@
             panel5.BackColor = Color.WhiteSmoke;
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(label3);
-            panel5.Location = new Point(232, 64);
+            panel5.Location = new Point(232, 41);
             panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
             panel5.Size = new Size(110, 34);
@@ -193,7 +281,7 @@
             panel6.BackColor = Color.WhiteSmoke;
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(label4);
-            panel6.Location = new Point(342, 64);
+            panel6.Location = new Point(342, 41);
             panel6.Margin = new Padding(0);
             panel6.Name = "panel6";
             panel6.Size = new Size(110, 34);
@@ -213,7 +301,7 @@
             panel7.BackColor = Color.WhiteSmoke;
             panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(label5);
-            panel7.Location = new Point(452, 64);
+            panel7.Location = new Point(452, 41);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
             panel7.Size = new Size(110, 34);
@@ -233,7 +321,7 @@
             panel8.BackColor = Color.WhiteSmoke;
             panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Controls.Add(label6);
-            panel8.Location = new Point(562, 64);
+            panel8.Location = new Point(562, 41);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
             panel8.Size = new Size(110, 34);
@@ -253,7 +341,7 @@
             panel9.BackColor = Color.WhiteSmoke;
             panel9.BorderStyle = BorderStyle.FixedSingle;
             panel9.Controls.Add(label7);
-            panel9.Location = new Point(672, 64);
+            panel9.Location = new Point(672, 41);
             panel9.Margin = new Padding(0);
             panel9.Name = "panel9";
             panel9.Size = new Size(110, 34);
@@ -267,69 +355,6 @@
             label7.Size = new Size(57, 15);
             label7.TabIndex = 2;
             label7.Text = "Domingo";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(57, 59);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 15);
-            label1.TabIndex = 15;
-            label1.Text = "Renda do mês";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(57, 140);
-            label8.Name = "label8";
-            label8.Size = new Size(92, 15);
-            label8.TabIndex = 16;
-            label8.Text = "Depesas do mês";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(23, 98);
-            label9.Name = "label9";
-            label9.Size = new Size(40, 15);
-            label9.TabIndex = 17;
-            label9.Text = "Renda";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(23, 178);
-            label10.Name = "label10";
-            label10.Size = new Size(50, 15);
-            label10.TabIndex = 18;
-            label10.Text = "Despesa";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(23, 14);
-            label11.Name = "label11";
-            label11.Size = new Size(92, 15);
-            label11.TabIndex = 19;
-            label11.Text = "Resumo do mês";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(23, 229);
-            label12.Name = "label12";
-            label12.Size = new Size(36, 15);
-            label12.TabIndex = 20;
-            label12.Text = "Saldo";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(74, 274);
-            label13.Name = "label13";
-            label13.Size = new Size(63, 15);
-            label13.TabIndex = 21;
-            label13.Text = "SaldoNum";
             // 
             // frmMenuPrincipal
             // 
@@ -350,7 +375,7 @@
             Controls.Add(lblMes);
             Controls.Add(flowLayoutPanel1);
             Name = "frmMenuPrincipal";
-            Text = "frmMenuPrincipal";
+            Text = "Planejador Financeiro";
             Load += frmMenuPrincipal_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -393,12 +418,14 @@
         private Label label6;
         private Panel panel9;
         private Label label7;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label1;
-        private Label label13;
-        private Label label12;
+        private Label lblResumoMes;
+        private Label lblDespesa;
+        private Label lblRenda;
+        private Label lblNumDespesa;
+        private Label lblNumRenda;
+        private Label lblNumSaldo;
+        private Label lblNumSaldoPrevisto;
+        private Label lblSaldoPrevisto;
+        private Label lblSaldo;
     }
 }
