@@ -57,6 +57,11 @@ namespace planejador_financeiroCS.Services
 
         public IReadOnlyList<Lancamento> GetAll() => _items.AsReadOnly();
 
+        public Lancamento? GetById(Guid id)
+        {
+            return _items.FirstOrDefault(x => x.Id == id);
+        }
+
         // Adds a one-time lancamento
         public void AddOneTime(string name, decimal value, string tipo, DateTime date)
         {
@@ -71,6 +76,30 @@ namespace planejador_financeiroCS.Services
             var item = new Lancamento {Id = Guid.NewGuid(), Name = name, Value = value, Tipo = tipo, Date = dateWithDay.Date, IsRecurringMonthly = true };
             _items.Add(item);
             Save();
+        }
+
+        public bool Update(Lancamento lancamento)
+        {
+            var item = GetById(lancamento.Id);
+            if (item == null) return false;
+
+            item.Name = lancamento.Name;
+            item.Value = lancamento.Value;
+            item.Tipo = lancamento.Tipo;
+            item.Date = lancamento.Date.Date;
+            item.IsRecurringMonthly = lancamento.IsRecurringMonthly;
+            Save();
+            return true;
+        }
+
+        public bool Delete(Guid id)
+        {
+            var item = GetById(id);
+            if (item == null) return false;
+
+            _items.Remove(item);
+            Save();
+            return true;
         }
 
         // Returns lancamentos that apply to the specified month/year. Recurring entries are expanded to that month.

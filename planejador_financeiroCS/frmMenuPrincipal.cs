@@ -71,5 +71,11 @@ namespace planejador_financeiroCS
             showDays(_month, _year);
         }
 
+        private void btnCrud_Click(object sender, EventArgs e)
+        {
+            frmCrud form = new frmCrud();
+            form.Show();
+
+        }
     }
 }

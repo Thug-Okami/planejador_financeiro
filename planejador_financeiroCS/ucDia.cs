@@ -38,9 +38,9 @@ namespace planejador_financeiroCS
         {
             if (_date == null) return;
             if (_date.Value.DayOfWeek == DayOfWeek.Sunday)
-                label1.ForeColor = Color.FromArgb(255, 128, 128);
+                lblDia.ForeColor = Color.FromArgb(255, 128, 128);
             else
-                label1.ForeColor = Color.FromArgb(64, 64, 64);
+                lblDia.ForeColor = Color.FromArgb(64, 64, 64);
         }
 
         private void ucDia_Load(object sender, EventArgs e)
@@ -51,19 +51,19 @@ namespace planejador_financeiroCS
 
         private void displayEvents()
         {
-            label1.Text = string.Empty;
+            lblDia.Text = string.Empty;
             label2.Text = string.Empty;
             if (_date == null) return;
 
             var date = _date.Value;
-            label1.Text = date.Day.ToString();
+            lblDia.Text = date.Day.ToString();
             try
             {
                 var lanc = LancamentoStore.Instance.GetLancamentosForMonth(date.Month, date.Year)
                     .Where(l => l.Date.Day == date.Day)
                     .ToList();
                 if (lanc.Count == 0) return;
-                label1.Text += " (" + lanc.Count + ")";
+                lblDia.Text += " (" + lanc.Count + ")";
                 // show first three names
                 var names = lanc.Select(l => l.Name).ToList();
                 label2.Text = string.Join(", ", names.Take(3));

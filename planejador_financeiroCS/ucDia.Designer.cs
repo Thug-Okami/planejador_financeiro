@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             label2 = new Label();
-            label1 = new Label();
+            lblDia = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -39,12 +38,12 @@
             // 
             panel1.BackColor = SystemColors.Window;
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblDia);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(1);
-            panel1.Size = new Size(104, 51);
+            panel1.Size = new Size(110, 70);
             panel1.TabIndex = 0;
             panel1.Click += panel1_Click;
             // 
@@ -57,22 +56,24 @@
             label2.TabIndex = 1;
             label2.Text = "label2";
             // 
-            // label1
+            // lblDia
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(4, 1);
-            label1.Name = "label1";
-            label1.Size = new Size(19, 15);
-            label1.TabIndex = 0;
-            label1.Text = "00";
+            lblDia.AutoSize = true;
+            lblDia.Location = new Point(4, 1);
+            lblDia.Name = "lblDia";
+            lblDia.Size = new Size(19, 15);
+            lblDia.TabIndex = 0;
+            lblDia.Text = "00";
             // 
             // ucDia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panel1);
+            Margin = new Padding(0);
             Name = "ucDia";
-            Size = new Size(104, 51);
+            Size = new Size(110, 70);
             Load += ucDia_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -82,7 +83,7 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
+        private Label lblDia;
         private Label label2;
     }
 }
