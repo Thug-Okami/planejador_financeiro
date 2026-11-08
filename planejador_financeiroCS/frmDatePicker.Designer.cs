@@ -84,6 +84,7 @@
             Controls.Add(comboBoxMes);
             Controls.Add(label1);
             MaximizeBox = false;
+            MaximumSize = new Size(248, 233);
             Name = "frmDatePicker";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmDatePicker";

@@ -34,6 +34,7 @@
             btnBack = new Button();
             btnNext = new Button();
             panel1 = new Panel();
+            panel2 = new Panel();
             lblNumSaldo = new Label();
             lblNumSaldoPrevisto = new Label();
             lblSaldoPrevisto = new Label();
@@ -120,6 +121,7 @@
             // 
             panel1.BackColor = Color.WhiteSmoke;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(lblNumSaldo);
             panel1.Controls.Add(lblNumSaldoPrevisto);
             panel1.Controls.Add(lblSaldoPrevisto);
@@ -136,11 +138,20 @@
             panel1.Size = new Size(216, 570);
             panel1.TabIndex = 12;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DimGray;
+            panel2.Location = new Point(5, 301);
+            panel2.Margin = new Padding(0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(203, 1);
+            panel2.TabIndex = 24;
+            // 
             // lblNumSaldo
             // 
             lblNumSaldo.AutoSize = true;
             lblNumSaldo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNumSaldo.Location = new Point(74, 249);
+            lblNumSaldo.Location = new Point(57, 257);
             lblNumSaldo.Name = "lblNumSaldo";
             lblNumSaldo.Size = new Size(64, 15);
             lblNumSaldo.TabIndex = 21;
@@ -150,7 +161,7 @@
             // 
             lblNumSaldoPrevisto.AutoSize = true;
             lblNumSaldoPrevisto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNumSaldoPrevisto.Location = new Point(74, 335);
+            lblNumSaldoPrevisto.Location = new Point(57, 353);
             lblNumSaldoPrevisto.Name = "lblNumSaldoPrevisto";
             lblNumSaldoPrevisto.Size = new Size(86, 15);
             lblNumSaldoPrevisto.TabIndex = 22;
@@ -159,7 +170,7 @@
             // lblSaldoPrevisto
             // 
             lblSaldoPrevisto.AutoSize = true;
-            lblSaldoPrevisto.Location = new Point(27, 291);
+            lblSaldoPrevisto.Location = new Point(23, 322);
             lblSaldoPrevisto.Name = "lblSaldoPrevisto";
             lblSaldoPrevisto.Size = new Size(81, 15);
             lblSaldoPrevisto.TabIndex = 23;
@@ -168,7 +179,7 @@
             // lblSaldo
             // 
             lblSaldo.AutoSize = true;
-            lblSaldo.Location = new Point(27, 191);
+            lblSaldo.Location = new Point(23, 231);
             lblSaldo.Name = "lblSaldo";
             lblSaldo.Size = new Size(78, 15);
             lblSaldo.TabIndex = 20;
@@ -177,16 +188,17 @@
             // lblResumoMes
             // 
             lblResumoMes.AutoSize = true;
-            lblResumoMes.Location = new Point(45, 15);
+            lblResumoMes.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblResumoMes.Location = new Point(30, 11);
             lblResumoMes.Name = "lblResumoMes";
-            lblResumoMes.Size = new Size(92, 15);
+            lblResumoMes.Size = new Size(152, 25);
             lblResumoMes.TabIndex = 19;
             lblResumoMes.Text = "Resumo do mês";
             // 
             // lblDespesa
             // 
             lblDespesa.AutoSize = true;
-            lblDespesa.Location = new Point(23, 106);
+            lblDespesa.Location = new Point(23, 140);
             lblDespesa.Name = "lblDespesa";
             lblDespesa.Size = new Size(50, 15);
             lblDespesa.TabIndex = 18;
@@ -195,7 +207,7 @@
             // lblRenda
             // 
             lblRenda.AutoSize = true;
-            lblRenda.Location = new Point(23, 44);
+            lblRenda.Location = new Point(23, 51);
             lblRenda.Name = "lblRenda";
             lblRenda.Size = new Size(40, 15);
             lblRenda.TabIndex = 17;
@@ -206,7 +218,7 @@
             lblNumDespesa.AutoSize = true;
             lblNumDespesa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNumDespesa.ForeColor = Color.Red;
-            lblNumDespesa.Location = new Point(57, 140);
+            lblNumDespesa.Location = new Point(57, 164);
             lblNumDespesa.Name = "lblNumDespesa";
             lblNumDespesa.Size = new Size(96, 15);
             lblNumDespesa.TabIndex = 16;
@@ -217,7 +229,7 @@
             lblNumRenda.AutoSize = true;
             lblNumRenda.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNumRenda.ForeColor = Color.ForestGreen;
-            lblNumRenda.Location = new Point(55, 75);
+            lblNumRenda.Location = new Point(57, 75);
             lblNumRenda.Name = "lblNumRenda";
             lblNumRenda.Size = new Size(85, 15);
             lblNumRenda.TabIndex = 15;
@@ -225,9 +237,9 @@
             // 
             // btnCrud
             // 
-            btnCrud.Location = new Point(23, 480);
+            btnCrud.Location = new Point(5, 479);
             btnCrud.Name = "btnCrud";
-            btnCrud.Size = new Size(159, 23);
+            btnCrud.Size = new Size(203, 36);
             btnCrud.TabIndex = 14;
             btnCrud.Text = "Visualizar Lançamentos";
             btnCrud.UseVisualStyleBackColor = true;
@@ -405,6 +417,7 @@
             Controls.Add(panel1);
             Controls.Add(flowLayoutPanel1);
             MaximizeBox = false;
+            MaximumSize = new Size(1016, 600);
             Name = "frmMenuPrincipal";
             Text = "Planejador Financeiro";
             Load += frmMenuPrincipal_Load;
@@ -460,5 +473,6 @@
         private Label lblSaldo;
         private Button btnDatePicker;
         private Button btnToday;
+        private Panel panel2;
     }
 }

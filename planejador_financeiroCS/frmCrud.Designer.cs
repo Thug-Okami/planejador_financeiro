@@ -298,6 +298,8 @@
             Controls.Add(textNome);
             Controls.Add(labelNome);
             Controls.Add(gridLancamentos);
+            MaximizeBox = false;
+            MaximumSize = new Size(816, 487);
             Name = "frmCrud";
             Text = "Lançamentos";
             Load += frmCrud_Load;

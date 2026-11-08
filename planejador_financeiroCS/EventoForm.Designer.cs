@@ -142,6 +142,8 @@
             Controls.Add(checkBoxRecurring);
             Controls.Add(textBoxNome);
             Controls.Add(textBox1);
+            MaximizeBox = false;
+            MaximumSize = new Size(431, 355);
             Name = "EventoForm";
             Text = "EventoForm";
             Load += EventoForm_Load;
