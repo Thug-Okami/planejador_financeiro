@@ -23,19 +23,44 @@ namespace planejador_financeiroCS
             ClearFields();
         }
 
+        private void Filter()
+        {
+            gridLancamentos.Rows.Clear();
+
+            foreach (var item in LancamentoStore.Instance.GetAll()
+                .Where(x => x.Name.Contains(textBoxFilter.Text) && x.IsRecurringMonthly == radioButtonRecorrente.Checked)
+                .OrderBy(x => x.Date).ThenBy(x => x.Name))
+            {
+                AddGridRow(item);
+            }
+            ClearFields();
+        }
+
         private void RefreshGrid()
         {
             gridLancamentos.Rows.Clear();
             foreach (var item in LancamentoStore.Instance.GetAll().OrderBy(x => x.Date).ThenBy(x => x.Name))
             {
-                var rowIndex = gridLancamentos.Rows.Add(
-                    item.Name,
-                    item.Value.ToString("N2", CultureInfo.CurrentCulture),
-                    item.Tipo,
-                    item.Date.ToString("d", CultureInfo.CurrentCulture),
-                    item.IsRecurringMonthly ? "Sim" : "Não");
-                gridLancamentos.Rows[rowIndex].Tag = item.Id;
+                AddGridRow(item);
             }
+        }
+
+        private void AddGridRow(Lancamento item)
+        {
+            var rowIndex = gridLancamentos.Rows.Add(
+                item.Name,
+                item.Value.ToString("N2", CultureInfo.CurrentCulture),
+                item.Tipo,
+                item.Date.ToString("d", CultureInfo.CurrentCulture),
+                item.IsRecurringMonthly ? "Sim" : "Não");
+            var row = gridLancamentos.Rows[rowIndex];
+            row.Tag = item.Id;
+            row.DefaultCellStyle.BackColor = item.Tipo switch
+            {
+                "Receita" => ColorTranslator.FromHtml("#E3F4E3"),
+                "Despesa" => ColorTranslator.FromHtml("#F4E3E3"),
+                _ => gridLancamentos.DefaultCellStyle.ForeColor
+            };
         }
 
         private void gridLancamentos_SelectionChanged(object sender, EventArgs e)
@@ -134,6 +159,19 @@ namespace planejador_financeiroCS
             checkRecorrente.Checked = false;
             btnExcluir.Enabled = false;
             btnSalvar.Text = "Salvar";
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void btnCancelFilter_Click(object sender, EventArgs e)
+        {
+            textBoxFilter.Clear();
+            radioButtonRecorrente.Checked = false;
+            RefreshGrid();
+            ClearFields();
         }
     }
 }

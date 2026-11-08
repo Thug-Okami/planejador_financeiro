@@ -28,7 +28,48 @@ namespace planejador_financeiroCS
             _month = month;
 
             string monthName = new DateTimeFormatInfo().GetMonthName(month);
+            switch (monthName)
+            {
+                case "January":
+                    monthName = "Janeiro";
+                    break;
+                case "February":
+                    monthName = "Fevereiro";
+                    break;
+                case "March":
+                    monthName = "Março";
+                    break;
+                case "April":
+                    monthName = "Abril";
+                    break;
+                case "May":
+                    monthName = "Maio";
+                    break;
+                case "June":
+                    monthName = "Junho";
+                    break;
+                case "July":
+                    monthName = "Julho";
+                    break;
+                case "August":
+                    monthName = "Agosto";
+                    break;
+                case "September":
+                    monthName = "Setembro";
+                    break;
+                case "October":
+                    monthName = "Outubro";
+                    break;
+                case "November":
+                    monthName = "Novembro";
+                    break;
+                case "December":
+                    monthName = "Dezembro";
+                    break;
+            }
+
             lblMes.Text = monthName.ToUpper() + " " + year;
+
 
             CalcSaldo();
 

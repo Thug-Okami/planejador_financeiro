@@ -102,7 +102,7 @@
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(75, 23);
             btnBack.TabIndex = 9;
-            btnBack.Text = "Voltar";
+            btnBack.Text = "◀ Voltar";
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
@@ -112,7 +112,7 @@
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(75, 23);
             btnNext.TabIndex = 10;
-            btnNext.Text = "Avançar";
+            btnNext.Text = "Avançar ▶";
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += btnNext_Click;
             // 
