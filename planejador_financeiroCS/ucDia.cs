@@ -26,7 +26,7 @@ namespace planejador_financeiroCS
             {
                 eventform.ShowDialog(this);
             }
-            displayEvents();
+            DisplayEvents();
         }
 
         private void flowLayoutPanel1_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace planejador_financeiroCS
             {
                 eventform.ShowDialog(this);
             }
-            displayEvents();
+            DisplayEvents();
         }
 
         public ucDia(DateTime? date)
@@ -46,7 +46,7 @@ namespace planejador_financeiroCS
         }
 
         //Modifica as cores dos domingos
-        private void sundays()
+        private void Sundays()
         {
             if (_date == null) return;
             if (_date.Value.DayOfWeek == DayOfWeek.Sunday)
@@ -57,11 +57,11 @@ namespace planejador_financeiroCS
 
         private void ucDia_Load(object sender, EventArgs e)
         {
-            sundays();
-            displayEvents();
+            Sundays();
+            DisplayEvents();
         }
 
-        private void displayEvents()
+        private void DisplayEvents()
         {
             flowLayoutPanel1.Controls.Clear();
             lblDia.Text = string.Empty;

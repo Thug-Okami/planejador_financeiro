@@ -18,10 +18,10 @@ namespace planejador_financeiroCS
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            showDays(DateTime.Now.Month, DateTime.Now.Year);
+            ShowDays(DateTime.Now.Month, DateTime.Now.Year);
         }
 
-        private void showDays(int month, int year)
+        public void ShowDays(int month, int year)
         {
             flowLayoutPanel1.Controls.Clear();
             _year = year;
@@ -50,9 +50,16 @@ namespace planejador_financeiroCS
             }
         }
 
+        //alimenta as labels de renda, despesa e saldo
         private void CalcSaldo()
         {
             var lancamentosDoMes = LancamentoStore.Instance.GetLancamentosForMonth(_month, _year);
+            decimal rendaRecorrente = lancamentosDoMes
+                .Where(l => l.Tipo == "Receita" && l.IsRecurringMonthly)
+                .Sum(l => l.Value);
+            decimal despesaRecorrente = lancamentosDoMes
+                .Where(l => l.Tipo == "Despesa" && l.IsRecurringMonthly)
+                .Sum(l => l.Value);
             decimal totalRendas = lancamentosDoMes
                 .Where(l => l.Tipo == "Receita")
                 .Sum(l => l.Value);
@@ -65,8 +72,12 @@ namespace planejador_financeiroCS
             lblNumDespesa.Text = totalDespesas.ToString("C");
             lblNumSaldo.Text = saldo.ToString("C");
             lblNumSaldoPrevisto.Text = CalculatePredictedBalance().ToString("C");
+
+            lblNumSaldo.ForeColor = saldo < 0 ? ColorTranslator.FromHtml("#FF0000") : ColorTranslator.FromHtml("#107C10");
+            lblNumSaldoPrevisto.ForeColor = saldo < 0 ? ColorTranslator.FromHtml("#FF0000") : ColorTranslator.FromHtml("#107C10");
         }
 
+        //faz o calculo do saldo previsto, considerando os lançamentos recorrentes
         private decimal CalculatePredictedBalance()
         {
             var displayedMonth = new DateTime(_year, _month, 1);
@@ -101,7 +112,7 @@ namespace planejador_financeiroCS
         private void frmMenuPrincipal_Activated(object? sender, EventArgs e)
         {
             if (_month > 0 && _year > 0)
-                showDays(_month, _year);
+                ShowDays(_month, _year);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -113,7 +124,7 @@ namespace planejador_financeiroCS
                 _month = 1;
                 _year += 1;
             }
-            showDays(_month, _year);
+            ShowDays(_month, _year);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -125,16 +136,29 @@ namespace planejador_financeiroCS
                 _month = 12;
                 _year -= 1;
             }
-            showDays(_month, _year);
+            ShowDays(_month, _year);
             CalcSaldo();
         }
 
         private void btnCrud_Click(object sender, EventArgs e)
         {
             frmCrud form = new frmCrud();
-            form.FormClosed += (_, _) => showDays(_month, _year);
+            form.FormClosed += (_, _) => ShowDays(_month, _year);
             form.Show();
+        }
 
+        private void btnDatePicker_Click(object sender, EventArgs e)
+        {
+            frmDatePicker form = new frmDatePicker();
+            form.Owner = this;
+            form.Show();
+        }
+
+        private void btnToday_Click(object sender, EventArgs e)
+        {
+            int mes = DateTime.Now.Month;
+            int ano = DateTime.Now.Year;
+            ShowDays(mes, ano);
         }
     }
 }

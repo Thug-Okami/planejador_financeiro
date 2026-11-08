@@ -57,6 +57,8 @@
             label6 = new Label();
             panel9 = new Panel();
             label7 = new Label();
+            btnDatePicker = new Button();
+            btnToday = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -87,16 +89,16 @@
             // lblMes
             // 
             lblMes.AutoSize = true;
-            lblMes.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMes.Location = new Point(184, 15);
+            lblMes.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMes.Location = new Point(12, 2);
             lblMes.Name = "lblMes";
-            lblMes.Size = new Size(48, 25);
+            lblMes.Size = new Size(61, 32);
             lblMes.TabIndex = 8;
             lblMes.Text = "Mês";
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(12, 15);
+            btnBack.Location = new Point(230, 11);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(75, 23);
             btnBack.TabIndex = 9;
@@ -106,7 +108,7 @@
             // 
             // btnNext
             // 
-            btnNext.Location = new Point(391, 12);
+            btnNext.Location = new Point(311, 11);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(75, 23);
             btnNext.TabIndex = 10;
@@ -137,18 +139,20 @@
             // lblNumSaldo
             // 
             lblNumSaldo.AutoSize = true;
+            lblNumSaldo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNumSaldo.Location = new Point(74, 249);
             lblNumSaldo.Name = "lblNumSaldo";
-            lblNumSaldo.Size = new Size(63, 15);
+            lblNumSaldo.Size = new Size(64, 15);
             lblNumSaldo.TabIndex = 21;
             lblNumSaldo.Text = "SaldoNum";
             // 
             // lblNumSaldoPrevisto
             // 
             lblNumSaldoPrevisto.AutoSize = true;
+            lblNumSaldoPrevisto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNumSaldoPrevisto.Location = new Point(74, 335);
             lblNumSaldoPrevisto.Name = "lblNumSaldoPrevisto";
-            lblNumSaldoPrevisto.Size = new Size(63, 15);
+            lblNumSaldoPrevisto.Size = new Size(86, 15);
             lblNumSaldoPrevisto.TabIndex = 22;
             lblNumSaldoPrevisto.Text = "Saldo previsto";
             // 
@@ -157,7 +161,7 @@
             lblSaldoPrevisto.AutoSize = true;
             lblSaldoPrevisto.Location = new Point(27, 291);
             lblSaldoPrevisto.Name = "lblSaldoPrevisto";
-            lblSaldoPrevisto.Size = new Size(86, 15);
+            lblSaldoPrevisto.Size = new Size(81, 15);
             lblSaldoPrevisto.TabIndex = 23;
             lblSaldoPrevisto.Text = "Saldo previsto";
             // 
@@ -166,14 +170,14 @@
             lblSaldo.AutoSize = true;
             lblSaldo.Location = new Point(27, 191);
             lblSaldo.Name = "lblSaldo";
-            lblSaldo.Size = new Size(36, 15);
+            lblSaldo.Size = new Size(78, 15);
             lblSaldo.TabIndex = 20;
-            lblSaldo.Text = "Saldo";
+            lblSaldo.Text = "Saldo do mês";
             // 
             // lblResumoMes
             // 
             lblResumoMes.AutoSize = true;
-            lblResumoMes.Location = new Point(23, 14);
+            lblResumoMes.Location = new Point(45, 15);
             lblResumoMes.Name = "lblResumoMes";
             lblResumoMes.Size = new Size(92, 15);
             lblResumoMes.TabIndex = 19;
@@ -200,18 +204,22 @@
             // lblNumDespesa
             // 
             lblNumDespesa.AutoSize = true;
+            lblNumDespesa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNumDespesa.ForeColor = Color.Red;
             lblNumDespesa.Location = new Point(57, 140);
             lblNumDespesa.Name = "lblNumDespesa";
-            lblNumDespesa.Size = new Size(92, 15);
+            lblNumDespesa.Size = new Size(96, 15);
             lblNumDespesa.TabIndex = 16;
             lblNumDespesa.Text = "Depesas do mês";
             // 
             // lblNumRenda
             // 
             lblNumRenda.AutoSize = true;
+            lblNumRenda.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNumRenda.ForeColor = Color.ForestGreen;
             lblNumRenda.Location = new Point(55, 75);
             lblNumRenda.Name = "lblNumRenda";
-            lblNumRenda.Size = new Size(82, 15);
+            lblNumRenda.Size = new Size(85, 15);
             lblNumRenda.TabIndex = 15;
             lblNumRenda.Text = "Renda do mês";
             // 
@@ -356,12 +364,35 @@
             label7.TabIndex = 2;
             label7.Text = "Domingo";
             // 
+            // btnDatePicker
+            // 
+            btnDatePicker.Location = new Point(667, 11);
+            btnDatePicker.Name = "btnDatePicker";
+            btnDatePicker.Size = new Size(112, 23);
+            btnDatePicker.TabIndex = 17;
+            btnDatePicker.Text = "Selecionar Data";
+            btnDatePicker.UseVisualStyleBackColor = true;
+            btnDatePicker.Click += btnDatePicker_Click;
+            // 
+            // btnToday
+            // 
+            btnToday.Location = new Point(586, 11);
+            btnToday.Name = "btnToday";
+            btnToday.Size = new Size(75, 23);
+            btnToday.TabIndex = 18;
+            btnToday.Text = "Hoje";
+            btnToday.UseVisualStyleBackColor = true;
+            btnToday.Click += btnToday_Click;
+            // 
             // frmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1000, 561);
+            Controls.Add(lblMes);
+            Controls.Add(btnToday);
+            Controls.Add(btnDatePicker);
             Controls.Add(panel9);
             Controls.Add(panel8);
             Controls.Add(panel7);
@@ -372,8 +403,8 @@
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Controls.Add(lblMes);
             Controls.Add(flowLayoutPanel1);
+            MaximizeBox = false;
             Name = "frmMenuPrincipal";
             Text = "Planejador Financeiro";
             Load += frmMenuPrincipal_Load;
@@ -427,5 +458,7 @@
         private Label lblNumSaldoPrevisto;
         private Label lblSaldoPrevisto;
         private Label lblSaldo;
+        private Button btnDatePicker;
+        private Button btnToday;
     }
 }
