@@ -48,11 +48,11 @@ O sistema é destinado a pessoas que desejam organizar suas finanças pessoais, 
 
 ### Tela Principal
 
-![Tela Principal]()
+![Tela Principal](planejador_financeiro_screenshot/planejador_financeiro_main.png "Tela Principal")
 
-### Tela de Cadastro
+### Tela de Gerenciamento
 
-![Tela de Gerenciamento]()
+![Tela de Gerenciamento](planejador_financeiro_screenshot/planejador_financeiro_crud.png "Tela de Gerenciamento")
 
 # Como Baixar
 
