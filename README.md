@@ -1,16 +1,18 @@
-# Planejador Financeiro
+# SIGEFP - Sistema de Gestão Financeira Pessoal
 
 ## 1. Título do Projeto
 
-Planejador Financeiro
+**SIGEFP - Sistema de Gestão Financeira Pessoal**
+
+---
 
 ## 2. Descrição do Projeto
 
-O Planejador Financeiro é uma aplicação desenvolvida com o objetivo de auxiliar usuários no controle e planejamento de suas finanças pessoais.
+O SIGEFP (Sistema de Gestão Financeira Pessoal) é uma aplicação desktop desenvolvida com o objetivo de auxiliar usuários no controle, acompanhamento e planejamento de suas finanças pessoais.
 
-Muitas pessoas enfrentam dificuldades para acompanhar receitas, despesas e compromissos financeiros, o que pode resultar em desorganização e dificuldades no gerenciamento do orçamento.
+Atualmente, muitas pessoas enfrentam dificuldades para registrar receitas e despesas, acompanhar seus gastos e manter uma organização financeira eficiente. A falta desse controle pode resultar em endividamento, dificuldade para atingir metas financeiras e problemas no gerenciamento do orçamento pessoal.
 
-Dessa forma, o sistema foi idealizado para oferecer uma solução simples e intuitiva, permitindo maior controle financeiro e melhor tomada de decisões relacionadas às finanças pessoais.
+Diante desse cenário, o SIGEFP foi idealizado como uma ferramenta prática e intuitiva para auxiliar no registro e gerenciamento de movimentações financeiras, permitindo que o usuário acompanhe sua situação financeira em tempo real e tome decisões mais conscientes sobre seus recursos.
 
 ## 3. Objetivo do Projeto
 
@@ -34,15 +36,23 @@ O sistema é destinado a pessoas que desejam organizar suas finanças pessoais, 
 
 - Cadastro de receitas.
 - Cadastro de despesas.
+- Controle de lançamentos recorrentes.
 - Visualização do saldo atualizado.
 - Gerenciamento de eventos financeiros.
-- Exclusão e edição de registros.
+- Consulta de movimentações financeiras.
+- Atualização de registros existentes.
+- Exclusão de registros.
+- Navegação por datas.
+- Visualização consolidada de lançamentos.
+
+---
 
 ## 6. Tecnologias Usadas
 
 - C#
 - .NET
 - Windows Forms
+- Github Copilot
 
 ## 7. Esboço do Projeto (Layout)
 
