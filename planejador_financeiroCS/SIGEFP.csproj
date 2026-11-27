@@ -6,12 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Image\salary.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Image\**" />
-    <EmbeddedResource Remove="Image\**" />
-    <None Remove="Image\**" />
+    <Content Include="Image\salary.ico" />
   </ItemGroup>
 
   <ItemGroup>

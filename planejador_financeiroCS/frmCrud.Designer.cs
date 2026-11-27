@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrud));
             gridLancamentos = new DataGridView();
             colNome = new DataGridViewTextBoxColumn();
             colValor = new DataGridViewTextBoxColumn();
@@ -298,6 +299,7 @@
             Controls.Add(textNome);
             Controls.Add(labelNome);
             Controls.Add(gridLancamentos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(816, 487);
             Name = "frmCrud";

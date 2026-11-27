@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventoForm));
             textBox1 = new TextBox();
             textBoxNome = new TextBox();
             checkBoxRecurring = new CheckBox();
@@ -142,10 +143,11 @@
             Controls.Add(checkBoxRecurring);
             Controls.Add(textBoxNome);
             Controls.Add(textBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(431, 355);
             Name = "EventoForm";
-            Text = "EventoForm";
+            Text = "Criar Lançamento";
             Load += EventoForm_Load;
             ResumeLayout(false);
             PerformLayout();

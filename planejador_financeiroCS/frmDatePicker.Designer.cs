@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatePicker));
             label1 = new Label();
             comboBoxMes = new ComboBox();
             numericUpDownAno = new NumericUpDown();
@@ -83,11 +84,12 @@
             Controls.Add(numericUpDownAno);
             Controls.Add(comboBoxMes);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(248, 233);
             Name = "frmDatePicker";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmDatePicker";
+            Text = "Selecionador de Data";
             Load += frmDatePicker_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDownAno).EndInit();
             ResumeLayout(false);

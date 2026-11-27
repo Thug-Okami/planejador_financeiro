@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             lblSegunda = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             lblMes = new Label();
@@ -416,10 +417,11 @@
             Controls.Add(panel3);
             Controls.Add(panel1);
             Controls.Add(flowLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(1016, 600);
             Name = "frmMenuPrincipal";
-            Text = "Planejador Financeiro";
+            Text = "SIGEFP";
             Load += frmMenuPrincipal_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
